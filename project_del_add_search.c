@@ -138,7 +138,7 @@ void listAll()
     }
     else
     {
-        search();
+        listAll();
     }
 }
 
