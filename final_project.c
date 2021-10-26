@@ -20,11 +20,11 @@ struct user
     int id;
     char s_name[25];
     char s_address[25];
-    char s_phone[10];
+    char s_phone[15];
     char s_email[25];
     char r_name[25];
     char r_address[25];
-    char r_phone[10];
+    char r_phone[15];
     char r_email[25];
 };
 
@@ -78,6 +78,7 @@ void createuser()
             printf("Enter Receiver's Email Address: ");
             gets(info.r_email);
             fflush(stdin);
+            
         fwrite(&info,sizeof(info),1,fp);
         printf("Enter Y/N to add another client!");
         fseek(stdin,0,SEEK_END);
@@ -126,6 +127,7 @@ void listAll()
             printf(" Receiver Phone number = %s \n", cus.r_phone);
             printf(" Receiver Address = %s \n", cus.r_address);
             printf(" Receiver Email = %s \n\n\n", cus.r_email);
+
     }
     fclose(fp);
     fflush(stdin);
@@ -138,7 +140,7 @@ void listAll()
     }
     else
     {
-        listAll();
+        search();
     }
 }
 
